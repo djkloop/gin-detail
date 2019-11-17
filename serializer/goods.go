@@ -50,6 +50,7 @@ func BuildDetail(id string) Detail {
 
 func BuildDetailResponse(id string) Response {
 	return Response{
+		Msg:  "查询成功",
 		Data: BuildDetail(id),
 	}
 }
