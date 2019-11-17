@@ -2,14 +2,14 @@ package models
 
 import "fmt"
 
-type Photo struct {
+type photo struct {
 	Id        string
 	ImagePath string
 }
 
-func GetPhotos() []Photo {
+func GetPhotos() []photo {
 
-	photos := []Photo{
+	photos := []photo{
 		{
 			Id:        "pic1",
 			ImagePath: "img01.jpg",

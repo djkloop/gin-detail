@@ -1,18 +1,9 @@
 package service
 
-import "gin_demo/models"
+import (
+	"gin_demo/serializer"
+)
 
-func GetPhotosService() []models.Photo {
-	photos := models.GetPhotos()
-	return photos
-}
-
-func GetPriceService() string {
-	price := models.GetPrice()
-	return price
-}
-
-func GetTitleService() string {
-	title := models.GetTitle()
-	return title
+func GetDetail(id string) serializer.Response {
+	return serializer.BuildDetailResponse(id)
 }
