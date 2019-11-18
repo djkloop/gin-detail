@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// ServerRouter 创建路由
 func ServerRouter() *gin.Engine {
 	r := gin.Default()
 	r.Use(middleware.Cors())

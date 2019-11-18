@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// 获取商品的id
+// GetGoodsWithDetail 获取商品的id
 func GetGoodsWithDetail(c *gin.Context) {
 	// 获取id
 	id := c.Param("id")

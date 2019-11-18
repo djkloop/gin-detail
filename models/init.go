@@ -4,18 +4,19 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql" // 数据库
 )
 
-//Db数据库连接池
+// DB 数据库实例
 var DB *sql.DB
 
-func InitDB(mysql_dsn string) {
-	DB, _ = sql.Open("mysql", mysql_dsn)
+// InitDB 初始化数据库
+func InitDB(url string) {
+	DB, _ = sql.Open("mysql", url)
 	defer DB.Close()
-	//设置数据库最大连接数
+	// 设置数据库最大连接数
 	DB.SetConnMaxLifetime(100)
-	//设置上数据库最大闲置连接数
+	// 设置上数据库最大闲置连接数
 	DB.SetMaxIdleConns(10)
 	//验证连接
 	if err := DB.Ping(); err != nil {
